@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.shadow-i-b {
+    box-shadow: inset 0 -10px 10px -10px #4174d9;
+}
+
+.header-shadow:hover {
+    box-shadow: inset 0 -20px 20px -20px #4174d9;
+}
