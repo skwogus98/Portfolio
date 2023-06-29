@@ -4,9 +4,9 @@ export default defineNuxtConfig({
     modules: [
       '@nuxtjs/tailwindcss'
     ],
-  //   css: [
-  //     '~/assets/css/tailwind.css',
-  //  ],
+    css: [
+      '@fortawesome/fontawesome-svg-core/styles.css'
+    ],
    tailwindcss: {
       cssPath: '~/assets/css/tailwind.css',
       configPath: 'tailwind.config',

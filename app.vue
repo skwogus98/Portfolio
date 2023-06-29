@@ -1,26 +1,30 @@
 <template>
     <div class="main">
-        <Header></Header>
-        <div ref="introduce" class="w-full h-full overflow-hidden">
-            <img src="/main.png" alt="" class="max-w-full h-auto">
+        <Header :pages="pages"></Header>
+        <div ref="introduce" id="introduce" class="w-full h-screen overflow-hidden flex items-center">
+            <Introduce :career="pages[1]"></Introduce>
         </div>
-        <div ref="career" class="w-full h-full overflow-hidden">
-            <img src="/main.png" alt="" class="max-w-full h-auto">
-        </div>
-        <div ref="projecs" class="w-full h-full overflow-hidden">
-            <img src="/main.png" alt="" class="max-w-full h-auto">
-        </div>
+        <div ref="career" class="w-full h-screen overflow-hidden"></div>
     </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
+import Introduce from "./layouts/Introduce.vue";
 export default {
     data() {
-        return {};
+        return {
+            pages: [],
+        };
     },
-    components: { Header },
+    components: { Header, Introduce },
     mounted() {
+        this.pages.push(this.$refs.introduce);
+        this.pages.push(this.$refs.career);
+        this.pages.push(this.$refs.projecs);
+        this.pages.push(this.$refs.skills);
+        this.pages.push(this.$refs.contact);
+
         const options = {
             root: null,
             rootMargin: "0px",
@@ -49,7 +53,10 @@ export default {
 </script>
 
 <style scoped>
-.main{
+.main {
     height: 500%;
+}
+#introduce {
+    background-image: url("/main.png");
 }
 </style>
